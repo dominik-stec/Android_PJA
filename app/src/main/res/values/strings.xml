@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">CalculatorBMI</string>
+
+    <string name="calculator_bmi">Kalkulator BMI</string>
+    <string name="adult">Dorosły</string>
+    <string name="child">Dziecko</string>
+    <string name="calculate_bmi">oblicz BMI</string>
+    <string name="your_bmi_is">Twoje BMI wynosi:</string>
+    <string name="human_height">Podaj swój wzrost (cm)</string>
+    <string name="human_weight">Podaj swoją wagę (kg)</string>
+    <string name="bmiCategory">Twoje BMI wskazuje na:</string>
+    <string name="percents_gender_choose">Wybór siatki percentylowej dla:</string>
+    <string name="girls">Dziewczynek</string>
+    <string name="boys">Chłopców</string>
+    <string name="child_age">Podaj wiek dziecka (2-20)</string>
+    <string name="your_age_is">Twój wiek to:</string>
+    <string name="result">wynik</string>
+    <string name="put_percent">wpisz centyl</string>
+    <string name="your_percent_is">Twoja wartość centylowa to:</string>
+    <string name="your_category_is">Wskazane wielkości sugerują:</string>
+    <string name="adult_person">osoba DOROSŁA</string>
+    <string name="child_person">dziecka</string>
+</resources>

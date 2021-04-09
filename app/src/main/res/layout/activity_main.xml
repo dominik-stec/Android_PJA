@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:paddingLeft="@dimen/sides_margin"
+    android:paddingRight="@dimen/sides_margin"
+    android:paddingTop="@dimen/def_margin"
+    android:paddingBottom="@dimen/def_margin"
+    android:background="@android:color/holo_green_light" >
+
+    <RelativeLayout
+    android:id="@+id/logo_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/light_grey">
+
+
+    <ImageView
+        android:id="@+id/logo_icon"
+        android:layout_width="95dp"
+        android:layout_height="84dp"
+        android:layout_below="@+id/logo_text"
+        android:layout_margin="@dimen/def_margin"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/openofficeorg_calc" />
+
+    <TextView
+        android:id="@+id/logo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginRight="81dp"
+        android:layout_marginTop="@dimen/def_margin"
+        android:gravity="center"
+        android:text="@string/calculator_bmi"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/logo_text_size"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/calc_data_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/background_light">
+
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/view_margin"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/adult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/def_margin"
+                        android:layout_weight="1"
+                        android:text="@string/adult"
+                        android:textSize="@dimen/other_text_size"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/child"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/def_margin"
+                        android:layout_weight="1"
+                        android:text="@string/child"
+                        android:textSize="@dimen/other_text_size" />
+                </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/human_height"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/gender"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginStart="@dimen/margin_left_right"
+                                android:layout_marginLeft="@dimen/margin_left_right"
+                                android:layout_marginEnd="@dimen/margin_left_right"
+                                android:layout_marginRight="@dimen/margin_left_right"
+                                android:ems="10"
+                                android:inputType="number"
+                                android:hint="@string/human_height"/>
+
+                                        <EditText
+                                            android:id="@+id/human_weight"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/human_height"
+                                            android:layout_marginVertical="@dimen/view_margin"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_marginStart="@dimen/margin_left_right"
+                                            android:layout_marginLeft="@dimen/margin_left_right"
+                                            android:layout_marginEnd="@dimen/margin_left_right"
+                                            android:layout_marginRight="@dimen/margin_left_right"
+                                            android:ems="10"
+                                            android:inputType="number"
+                                            android:hint="@string/human_weight"/>
+
+                            <Button
+                                android:id="@+id/calc_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_below="@+id/human_weight"
+                                android:layout_margin="@dimen/calc_btn_margin"
+                                android:padding="@dimen/calc_btn_margin"
+                                android:text="@string/calculate_bmi"
+                                android:textSize="@dimen/other_text_size"
+                                android:textColorLink="@color/ugier" />
+
+
+            </RelativeLayout>
+
+
+
+
+    </FrameLayout>
+

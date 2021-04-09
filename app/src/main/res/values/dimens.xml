@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="def_margin">4dp</dimen>
+    <dimen name="sides_margin">5dp</dimen>
+    <dimen name="calc_btn_margin">6dp</dimen>
+    <dimen name="view_margin">13dp</dimen>
+    <dimen name="margin_left_right">25dp</dimen>
+    <dimen name="logo_text_size">18sp</dimen>
+    <dimen name="btn_text_size">16sp</dimen>
+    <dimen name="other_text_size">20sp</dimen>
+    <dimen name="result_text_size">24sp</dimen>
+    <dimen name="bmi_result_text_size">16sp</dimen>
+</resources>

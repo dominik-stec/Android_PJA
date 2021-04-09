@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdultCalcResultActivity">
+
+    <RelativeLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey">
+
+
+        <ImageView
+            android:id="@+id/logo_icon"
+            android:layout_width="95dp"
+            android:layout_height="84dp"
+            android:layout_below="@+id/logo_text"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/def_margin"
+            android:src="@drawable/openofficeorg_calc" />
+
+        <TextView
+            android:id="@+id/logo_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginLeft="81dp"
+            android:layout_marginTop="@dimen/def_margin"
+            android:layout_marginEnd="81dp"
+            android:layout_marginRight="81dp"
+            android:gravity="center"
+            android:text="@string/calculator_bmi"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="@dimen/logo_text_size"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/adultPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="@string/adult_person"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/other_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/resultBmiView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_layout" />
+
+    <TextView
+        android:id="@+id/resultBmiView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:text="@string/your_bmi_is"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/other_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/bmiResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adultPerson" />
+
+    <TextView
+        android:id="@+id/bmiResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="bmi"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/result_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/resultBmiCategoryView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultBmiView" />
+
+    <TextView
+        android:id="@+id/bmiCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="bmiCat"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/result_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/resultBmiCategoryView"
+        app:layout_constraintTop_toBottomOf="@+id/bmiResult" />
+
+    <TextView
+        android:id="@+id/resultBmiCategoryView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margin"
+        android:background="@color/light_grey"
+        android:text="@string/bmiCategory"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/bmi_result_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bmiCategory"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiResult" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

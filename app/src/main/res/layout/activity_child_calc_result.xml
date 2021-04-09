@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChildCalcResultActivity">
+
+    <RelativeLayout
+        android:id="@+id/logo_child_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey">
+
+
+        <ImageView
+            android:id="@+id/logo_child_icon"
+            android:layout_width="95dp"
+            android:layout_height="84dp"
+            android:layout_below="@+id/logo_child_text"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/def_margin"
+            android:src="@drawable/openofficeorg_calc" />
+
+        <TextView
+            android:id="@+id/logo_child_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginLeft="81dp"
+            android:layout_marginTop="@dimen/def_margin"
+            android:layout_marginEnd="81dp"
+            android:layout_marginRight="81dp"
+            android:gravity="center"
+            android:text="@string/calculator_bmi"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="@dimen/logo_text_size"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/resultBmiChildView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:text="@string/your_bmi_is"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/other_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/bmiChildResult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_child_layout" />
+
+    <TextView
+        android:id="@+id/bmiChildResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:text="bmi"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="@dimen/result_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/childAge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultBmiChildView" />
+
+    <EditText
+        android:id="@+id/childAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/child_age"
+        android:inputType="number"
+        android:textColor="@android:color/holo_green_light"
+        android:textColorHint="@color/cardview_dark_background"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/percentBmiChildView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiChildResult" />
+
+    <TextView
+        android:id="@+id/percentBmiChildView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:text="@string/percents_gender_choose"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="@dimen/other_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/boyBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/childAge" />
+
+    <Button
+        android:id="@+id/boyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/boys"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/girlBtn"
+        app:layout_constraintTop_toBottomOf="@+id/percentBmiChildView" />
+
+    <Button
+        android:id="@+id/girlBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/girls"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/boyBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentBmiChildView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
