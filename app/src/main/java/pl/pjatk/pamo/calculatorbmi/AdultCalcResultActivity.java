@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+
 public class AdultCalcResultActivity extends AppCompatActivity {
 
     public static final String BMI_RESULT = "bmi_result";
 
     private float bmi;
+    public float height = 0;
+    public float weight = 0;
+    public int age = 0;
 
     private final String toLowBmi = "niedowagę";
     private final String normalBmi = "normę";
@@ -17,13 +21,13 @@ public class AdultCalcResultActivity extends AppCompatActivity {
     private final String veryHighBmi_II = "otyłość II st.";
     private final String veryHighBmi_III = "otyłość III st.";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getBundleBmiVal();
+
         setContentView(R.layout.activity_adult_calc_result);
 
-        getBundleBmiVal();
         double bmiRound = roundBmi(this.bmi);
         setBmiTextView(bmiRound);
         calculateBmiCategory();
@@ -33,6 +37,8 @@ public class AdultCalcResultActivity extends AppCompatActivity {
     private void getBundleBmiVal() {
         Bundle b = getIntent().getExtras();
         bmi = b.getFloat(BMI_RESULT, -1);
+        height = b.getFloat("height", -1);
+        weight = b.getFloat("weight", -1);
     }
 
     private double roundBmi(float bmi) {
@@ -55,4 +61,18 @@ public class AdultCalcResultActivity extends AppCompatActivity {
         else if(bmi>34.9 && bmi<=39.9) bmiCategory.setText(veryHighBmi_II);
         else if(bmi>39.9) bmiCategory.setText(veryHighBmi_III);
     }
+
+    public float getBmi() {
+        return bmi;
+    }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+
+
 }

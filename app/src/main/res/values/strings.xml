@@ -20,4 +20,11 @@
     <string name="your_category_is">Wskazane wielkości sugerują:</string>
     <string name="adult_person">osoba DOROSŁA</string>
     <string name="child_person">dziecka</string>
+    <string name="title_activity_start_logo">FullscreenActivity</string>
+    <string name="adult_age">Ile masz lat ?</string>
+    <string name="recommended_food">Polecany przepis:</string>
+    <string name="oblicz_PPM">Oblicz PPM</string>
+    <string name="calories_limit">Limit kalorii:</string>
+    <string name="woman">kobieta</string>
+    <string name="man">mężczyzna</string>
 </resources>

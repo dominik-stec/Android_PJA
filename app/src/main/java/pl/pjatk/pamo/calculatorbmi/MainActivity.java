@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+
 public class MainActivity extends AppCompatActivity {
 
     EditText heightText;
@@ -26,9 +27,14 @@ public class MainActivity extends AppCompatActivity {
     boolean calcWeight;
     float bmi;
 
+    Intent intentLogo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        startLogoWelcome();
+
         setContentView(R.layout.activity_main);
 
         calcHeight = false;
@@ -135,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
             bmi = calculateBmi(height, weight);
 
             intentAdult.putExtra(AdultCalcResultActivity.BMI_RESULT, bmi);
+            intentAdult.putExtra("height", height);
+            intentAdult.putExtra("weight", weight);
             startActivity(intentAdult);
         }
     }
@@ -159,5 +167,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void isChildOrAdultChecker() {
         this.isAdult = rButton.isChecked();
+    }
+
+    private void startLogoWelcome() {
+        intentLogo = new Intent(this, StartLogoActivity.class);
+        startActivityForResult(intentLogo, 1);
+    }
+
+    public float getHeight() {
+        return height;
+    }
+    public float getWeight() {
+        return weight;
     }
 }

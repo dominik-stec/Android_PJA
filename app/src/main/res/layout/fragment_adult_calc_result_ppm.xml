@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#868BC34A"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="pl.pjatk.pamo.calculatorbmi.FragmentCalcPPM">
+
+    <EditText
+        android:id="@+id/ageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/adult_age"
+        android:inputType="number"
+        tools:layout_editor_absoluteY="594dp" />
+
+
+    <Button
+        android:id="@+id/commitAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/oblicz_PPM"
+        tools:layout_editor_absoluteX="268dp"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/rb_woman"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/woman" />
+
+        <RadioButton
+            android:id="@+id/rb_man"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/man" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/calsLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calories_limit"
+        android:textSize="@dimen/bmi_result_text_size"
+        android:paddingLeft="@dimen/result_text_size"
+        android:layout_gravity="center_horizontal|center|center_vertical" />
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center|center_vertical"
+        android:text="kalorii"
+        android:paddingLeft="@dimen/result_text_size"
+        android:textSize="@dimen/result_text_size" />
+
+
+</LinearLayout>
