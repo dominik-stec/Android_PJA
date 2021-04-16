@@ -2,16 +2,25 @@
 // Represents a rectangle-bounded game element
 package pl.pjatk.pamo.calculatorbmi.game;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-public class GameElement {
+public class GameElement extends BitmapElement{
    protected CannonView view; // the view that contains this GameElement
    protected Paint paint = new Paint(); // Paint to draw this GameElement
    protected Rect shape; // the GameElement's rectangular bounds
    private float velocityY; // the vertical velocity of this GameElement
    private int soundId; // the sound associated with this GameElement
+
+   public GameElement(CannonView view, Bitmap bitmap, int soundId, int x, int y, float velocityY) {
+      super(view, bitmap, soundId, x, y, velocityY);
+      this.view = super.view;
+      this.shape = super.shape;
+      this.velocityY = super.velocityY;
+      this.soundId = super.soundId;
+   }
 
    // public constructor
    public GameElement(CannonView view, int color, int soundId, int x,
@@ -43,6 +52,7 @@ public class GameElement {
    public void playSound() {
       view.playSound(soundId);
    }
+
 }
 
 /*********************************************************************************

@@ -9,7 +9,7 @@ import pl.pjatk.pamo.calculatorbmi.R;
 
 public class GameMainActivity extends AppCompatActivity {
 
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
