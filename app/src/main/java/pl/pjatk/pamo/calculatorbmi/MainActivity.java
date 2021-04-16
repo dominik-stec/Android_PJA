@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
+
+import pl.pjatk.pamo.calculatorbmi.game.GameMainActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     Intent intentLogo;
 
+    ImageButton playGame;
+    Intent startGame;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         getAllLayoutIds();
         initIntents();
         setBtnListener();
+
+        setGameListener();
 
     }
 
@@ -66,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
                 isChildOrAdultChecker();
 
-                if(isAdult) {
+                if (isAdult) {
 
                     heightExceptionHandler(1, 270);
                     weightExceptionHandler(1, 300);
                     startAdultActivityChecker();
 
-                } else  {   // for child
+                } else {   // for child
 
                     heightExceptionHandler(1, 260);
                     weightExceptionHandler(1, 260);
@@ -98,14 +106,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void heightExceptionHandler(int minHeight, int maxHeight) {
 
-        if(heightText.getText().toString().equals("")) {
+        if (heightText.getText().toString().equals("")) {
 
             heightTextFormat();
 
         } else {
 
             height = Float.parseFloat(heightText.getText().toString());
-            if(height > maxHeight || height < minHeight) {
+            if (height > maxHeight || height < minHeight) {
 
                 heightTextFormat();
 
@@ -117,14 +125,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void weightExceptionHandler(int minWeight, int maxWeight) {
 
-        if(weightText.getText().toString().equals("")) {
+        if (weightText.getText().toString().equals("")) {
 
             weightTextFormat();
 
         } else {
 
             weight = Float.parseFloat(weightText.getText().toString());
-            if(weight > maxWeight || weight < minWeight) {
+            if (weight > maxWeight || weight < minWeight) {
 
                 weightTextFormat();
 
@@ -161,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     private float calculateBmi(float height, float weight) {
         float bmi = 0;
         height /= 100;
-        bmi = weight / (height*height);
+        bmi = weight / (height * height);
         return bmi;
     }
 
@@ -177,7 +185,21 @@ public class MainActivity extends AppCompatActivity {
     public float getHeight() {
         return height;
     }
+
     public float getWeight() {
         return weight;
+    }
+
+    private void setGameListener() {
+
+        playGame = (ImageButton) findViewById(R.id.play_game);
+        startGame = new Intent(this, GameMainActivity.class);
+
+        playGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(startGame);
+            }
+        });
     }
 }
