@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".game.GameMainActivity">
 
-    <CannonView
+    <SurfaceView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cannonView"/>
+        android:id="@+id/gameSurfaceView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

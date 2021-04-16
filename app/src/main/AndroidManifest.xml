@@ -15,6 +15,7 @@
         <activity android:name=".GirlPercentActivity" />
         <activity android:name=".ChildCalcResultActivity" />
         <activity android:name=".AdultCalcResultActivity" />
+        <activity android:name=".game.GameMainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
