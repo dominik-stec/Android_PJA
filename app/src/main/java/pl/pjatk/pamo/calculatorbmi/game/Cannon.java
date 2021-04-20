@@ -53,7 +53,7 @@ public class Cannon {
       int radius = (int) (view.getScreenHeight() *
          CannonView.CANNONBALL_RADIUS_PERCENT);
 
-      Bitmap bm = BitmapFactory.decodeResource(view.getResources(), R.drawable.syringe_reverse_bitmap);
+      Bitmap bm = BitmapFactory.decodeResource(view.getResources(), R.drawable.syringe_reverse);
       //Bitmap bm = loadBitmap("android.resource://pl.pjatk.pamo.calculatorbmi/R.drawable.syringe_reverse_bitmap");
 
       cannonball = new Cannonball(view, bm, Color.BLACK,
