@@ -8,7 +8,7 @@ public class Blocker extends pl.pjatk.pamo.calculatorbmi.game.GameElement {
    // constructor
    public Blocker(pl.pjatk.pamo.calculatorbmi.game.CannonView view, int color, int missPenalty, int x,
                   int y, int width, int length, float velocityY) {
-      super(view, color, pl.pjatk.pamo.calculatorbmi.game.CannonView.BLOCKER_SOUND_ID, x, y, width, length,
+      super(view, color, pl.pjatk.pamo.calculatorbmi.game.CannonView.BLOCKER_SOUND_ID, x, y, width*5, length,
          velocityY);
       this.missPenalty = missPenalty;
    }
