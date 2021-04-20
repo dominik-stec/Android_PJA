@@ -8,7 +8,7 @@ public class Target extends pl.pjatk.pamo.calculatorbmi.game.GameElement {
    // constructor
    public Target(CannonView view, int color, int hitReward, int x, int y,
       int width, int length, float velocityY) {
-      super(view, color, CannonView.TARGET_SOUND_ID, x, y, width, length,
+      super(view, color, CannonView.TARGET_SOUND_ID, x, y, width*4, length,
          velocityY);
       this.hitReward = hitReward;
    }

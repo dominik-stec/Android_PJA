@@ -3,9 +3,12 @@
 package pl.pjatk.pamo.calculatorbmi.game;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+
+import pl.pjatk.pamo.calculatorbmi.R;
 
 public class GameElement extends BitmapElement{
    protected CannonView view; // the view that contains this GameElement
@@ -13,6 +16,8 @@ public class GameElement extends BitmapElement{
    protected Rect shape; // the GameElement's rectangular bounds
    private float velocityY; // the vertical velocity of this GameElement
    private int soundId; // the sound associated with this GameElement
+
+   public Bitmap bitmap;
 
 //   public Bitmap bitmap;
 
@@ -44,6 +49,8 @@ public class GameElement extends BitmapElement{
       shape = new Rect(x, y, x + width, y + length); // set bounds
       this.soundId = soundId;
       this.velocityY = velocityY;
+
+      bitmap = BitmapFactory.decodeResource(view.getResources(), R.drawable.virus);
    }
 
    // update GameElement position and check for wall collisions
@@ -58,8 +65,12 @@ public class GameElement extends BitmapElement{
    }
 
    // draws this GameElement on the given Canvas
+//   public void draw(Canvas canvas) {
+//      canvas.drawRect(shape, paint);
+//   }
+
    public void draw(Canvas canvas) {
-      canvas.drawRect(shape, paint);
+      canvas.drawBitmap(bitmap, null, shape, null );
    }
 
    // plays the sound that corresponds to this type of GameElement
