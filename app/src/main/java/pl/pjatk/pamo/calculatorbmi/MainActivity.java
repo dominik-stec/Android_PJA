@@ -3,11 +3,15 @@ package pl.pjatk.pamo.calculatorbmi;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import pl.pjatk.pamo.calculatorbmi.game.GameMainActivity;
 
@@ -35,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     ImageButton playGame;
     Intent startGame;
 
+    Button statBtn;
+    Intent showStat;
+    boolean statBtnHeightActive = false;
+    boolean statBtnWeightActive = false;
+    boolean statBtnDisabled = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +62,35 @@ public class MainActivity extends AppCompatActivity {
 
         setGameListener();
 
+        setStatDataListener();
+        setStatBtnListener();
+        statBtn.setEnabled(false);
+
+        setRadioButtonListener();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
+
 
     private void getAllLayoutIds() {
         heightText = (EditText) findViewById(R.id.human_height);
         weightText = (EditText) findViewById(R.id.human_weight);
         button = (Button) findViewById(R.id.calc_btn);
         rButton = (RadioButton) findViewById(R.id.adult);
+
+        statBtn = (Button) findViewById(R.id.stat_btn);
     }
 
     private void initIntents() {
         intentAdult = new Intent(this, AdultCalcResultActivity.class);
         intentChild = new Intent(this, ChildCalcResultActivity.class);
+
+        showStat = new Intent(this, ShowStatActivity.class);
     }
 
     private void setBtnListener() {
@@ -199,6 +226,89 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(startGame);
+            }
+        });
+    }
+
+    private void setStatBtnListener() {
+
+        statBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChildOrAdultChecker();
+                if(isAdult)
+                    startActivity(showStat);
+                else {
+                    statBtn.setEnabled(false);
+                    statBtnDisabled = true;
+                    Toast.makeText(getApplicationContext(), "Dane statystyczne dotyczą tylko osób dorosłych.",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void setStatDataListener() {
+
+        heightText.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                isChildOrAdultChecker();
+                if(isAdult) statBtnHeightActive = true;
+                else statBtnHeightActive = false;
+
+                if(statBtnHeightActive && statBtnWeightActive)
+                    statBtn.setEnabled(true);
+
+            }
+        });
+
+        weightText.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                isChildOrAdultChecker();
+                if(isAdult) statBtnWeightActive = true;
+                else statBtnWeightActive = false;
+
+                if(statBtnHeightActive && statBtnWeightActive)
+                    statBtn.setEnabled(true);
+
+            }
+        });
+    }
+
+    private void setRadioButtonListener() {
+        rButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isChildOrAdultChecker();
+                if(statBtnDisabled && isAdult) {
+                    statBtn.setEnabled(true);
+                }
             }
         });
     }

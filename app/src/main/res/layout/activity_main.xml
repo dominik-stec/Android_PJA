@@ -132,6 +132,18 @@
                                 android:textSize="@dimen/other_text_size"
                                 android:textColorLink="@color/ugier" />
 
+                            <Button
+                                android:id="@+id/stat_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_below="@+id/human_weight"
+                                android:layout_margin="@dimen/calc_btn_margin"
+                                android:padding="@dimen/calc_btn_margin"
+                                android:text="@string/stat"
+                                android:textSize="@dimen/other_text_size"
+                                android:textColorLink="@color/ugier" />
+
 
             </RelativeLayout>
 

@@ -53,6 +53,8 @@ public class Cannon {
       int radius = (int) (view.getScreenHeight() *
          CannonView.CANNONBALL_RADIUS_PERCENT);
 
+      // bitmap source
+      // https://www.dreamstime.com/syringe-medicine-medicine-single-icon-cartoon-style-vector-symbol-stock-illustration-web-image90533259
       Bitmap bm = BitmapFactory.decodeResource(view.getResources(), R.drawable.syringe_reverse);
       //Bitmap bm = loadBitmap("android.resource://pl.pjatk.pamo.calculatorbmi/R.drawable.syringe_reverse_bitmap");
 
