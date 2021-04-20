@@ -2,12 +2,15 @@
 // Represents the Cannonball that the Cannon fires
 package pl.pjatk.pamo.calculatorbmi.game;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 
 public class Cannonball extends pl.pjatk.pamo.calculatorbmi.game.GameElement {
    private float velocityX;
    private boolean onScreen;
+
+   public Bitmap bitmap;
 
    // constructor
    public Cannonball(CannonView view, int color, int soundId, int x,
@@ -16,6 +19,16 @@ public class Cannonball extends pl.pjatk.pamo.calculatorbmi.game.GameElement {
          2 * radius, 2 * radius, velocityY);
       this.velocityX = velocityX;
       onScreen = true;
+   }
+
+   public Cannonball(CannonView view, Bitmap bitmap, int color, int soundId, int x,
+                     int y, int radius, float velocityX, float velocityY) {
+      super(view, color, soundId, x, y,
+              2 * radius, 2 * radius, velocityY);
+      this.velocityX = velocityX;
+      onScreen = true;
+
+      this.bitmap = bitmap;
    }
 
    // get Cannonball's radius
@@ -56,9 +69,15 @@ public class Cannonball extends pl.pjatk.pamo.calculatorbmi.game.GameElement {
    // draws the Cannonball on the given canvas
    @Override
    public void draw(Canvas canvas) {
-      canvas.drawCircle(shape.left + getRadius(),
-         shape.top + getRadius(), getRadius(), paint);
+//      canvas.drawCircle(shape.left + getRadius(),
+//         shape.top + getRadius(), getRadius(), paint);
+      //Rect shSrc = new Rect(0, 0, 20, 20);
+      Rect shDst = new Rect(shape.left, shape.top, shape.left + getRadius()*7,
+              shape.top + getRadius()*3);
+      canvas.drawBitmap(bitmap, null, shDst, null );
    }
+
+
 }
 
 /*********************************************************************************

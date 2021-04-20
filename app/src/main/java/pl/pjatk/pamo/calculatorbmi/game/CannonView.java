@@ -95,6 +95,8 @@ public class CannonView extends SurfaceView
    private Paint textPaint; // Paint used to draw text
    private Paint backgroundPaint; // Paint used to clear the drawing area
 
+   Context context;
+
    // constructor
    public CannonView(Context context, AttributeSet attrs) {
       super(context, attrs); // call superclass constructor
@@ -125,6 +127,8 @@ public class CannonView extends SurfaceView
       textPaint = new Paint();
       backgroundPaint = new Paint();
       backgroundPaint.setColor(Color.WHITE);
+
+      this.context = context;
    }
 
    // called when the size of the SurfaceView changes,

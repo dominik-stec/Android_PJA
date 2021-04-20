@@ -2,10 +2,14 @@
 // Represents Cannon and fires the Cannonball
 package pl.pjatk.pamo.calculatorbmi.game;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+
+import pl.pjatk.pamo.calculatorbmi.R;
 
 public class Cannon {
    private int baseRadius; // Cannon base's radius
@@ -49,11 +53,19 @@ public class Cannon {
       int radius = (int) (view.getScreenHeight() *
          CannonView.CANNONBALL_RADIUS_PERCENT);
 
-      // construct Cannonball and position it in the Cannon
-      cannonball = new Cannonball(view, Color.BLACK,
-         CannonView.CANNON_SOUND_ID, -radius,
-         view.getScreenHeight() / 2 - radius, radius, velocityX,
-         velocityY);
+      Bitmap bm = BitmapFactory.decodeResource(view.getResources(), R.drawable.syringe_reverse_bitmap);
+      //Bitmap bm = loadBitmap("android.resource://pl.pjatk.pamo.calculatorbmi/R.drawable.syringe_reverse_bitmap");
+
+      cannonball = new Cannonball(view, bm, Color.BLACK,
+              CannonView.CANNON_SOUND_ID, -radius,
+              view.getScreenHeight() / 2 - radius, radius, velocityX,
+              velocityY);
+
+//      // construct Cannonball and position it in the Cannon
+//      cannonball = new Cannonball(view, Color.BLACK,
+//         CannonView.CANNON_SOUND_ID, -radius,
+//         view.getScreenHeight() / 2 - radius, radius, velocityX,
+//         velocityY);
 
       cannonball.playSound(); // play fire Cannonball sound
    }
@@ -78,6 +90,7 @@ public class Cannon {
    public void removeCannonball() {
       cannonball = null;
    }
+
 }
 
 /*********************************************************************************

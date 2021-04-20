@@ -14,13 +14,27 @@ public class GameElement extends BitmapElement{
    private float velocityY; // the vertical velocity of this GameElement
    private int soundId; // the sound associated with this GameElement
 
-   public GameElement(CannonView view, Bitmap bitmap, int soundId, int x, int y, float velocityY) {
-      super(view, bitmap, soundId, x, y, velocityY);
-      this.view = super.view;
-      this.shape = super.shape;
-      this.velocityY = super.velocityY;
-      this.soundId = super.soundId;
-   }
+//   public Bitmap bitmap;
+
+//   public GameElement(CannonView view, Bitmap bitmap, int soundId, int x, int y, float velocityY) {
+//      super(view, bitmap, soundId, x, y, velocityY);
+//      this.view = super.view;
+//      this.shape = super.shape;
+//      this.velocityY = super.velocityY;
+//      this.soundId = super.soundId;
+//   }
+
+//   // public constructor
+//   public GameElement(CannonView view, Bitmap bitmap, int color, int soundId, int x,
+//                      int y, int width, int length, float velocityY) {
+//      this.view = view;
+//      paint.setColor(color);
+//      shape = new Rect(x, y, x + width, y + length); // set bounds
+//      this.soundId = soundId;
+//      this.velocityY = velocityY;
+//
+//      this.bitmap = bitmap;
+//   }
 
    // public constructor
    public GameElement(CannonView view, int color, int soundId, int x,
@@ -52,6 +66,8 @@ public class GameElement extends BitmapElement{
    public void playSound() {
       view.playSound(soundId);
    }
+
+   //public void drawBitmap(Canvas canvas, Bitmap bitmap) {canvas.drawBitmap(bitmap, shape, shape, null);}
 
 }
 
