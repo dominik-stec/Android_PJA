@@ -28,6 +28,7 @@ public class GameElement extends BitmapElement{
       this.soundId = soundId;
       this.velocityY = velocityY;
 
+      //https://openclipart.org/image/800px/205971
       bitmap = BitmapFactory.decodeResource(view.getResources(), R.drawable.virus);
    }
 
