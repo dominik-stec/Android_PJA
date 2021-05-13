@@ -13,22 +13,22 @@ open class GameElement(// the view that contains this GameElement
 ) :
     BitmapElement() {
     protected var paint = Paint() // Paint to draw this GameElement
-    override lateinit var shape // the GameElement's rectangular bounds
-            : Rect
-    private override var velocityY // the vertical velocity of this GameElement
-            : Float
-    private override var soundId // the sound associated with this GameElement
-            : Int
+    override var shape // the GameElement's rectangular bounds
+            : Rect? = null
+    override var velocityY // the vertical velocity of this GameElement
+            : Float = 0f
+    override var soundId // the sound associated with this GameElement
+            : Int = 0
     override var bitmap: Bitmap? = null
 
     // update GameElement position and check for wall collisions
     open fun update(interval: Double) {
         // update vertical position
-        shape.offset(0, (velocityY * interval).toInt())
+        shape!!.offset(0, (velocityY * interval).toInt())
 
         // if this GameElement collides with the wall, reverse direction
-        if (shape.top < 0 && velocityY < 0 ||
-            shape.bottom > view!!.screenHeight && velocityY > 0
+        if (shape!!.top < 0 && velocityY < 0 ||
+            shape!!.bottom > view!!.screenHeight && velocityY > 0
         ) velocityY *= -1f // reverse this GameElement's velocity
     }
 
@@ -37,7 +37,7 @@ open class GameElement(// the view that contains this GameElement
     //      canvas.drawRect(shape, paint);
     //   }
     open fun draw(canvas: Canvas) {
-        canvas.drawBitmap(bitmap!!, null, shape, null)
+        canvas.drawBitmap(bitmap!!, null, shape!!, null)
     }
 
     // plays the sound that corresponds to this type of GameElement

@@ -68,7 +68,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
             : Paint
     private val backgroundPaint // Paint used to clear the drawing area
             : Paint
-    var context: Context
+    var context2: Context? = null
 
     // called when the size of the SurfaceView changes,
     // such as when it's first added to the View hierarchy
@@ -521,7 +521,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         textPaint = Paint()
         backgroundPaint = Paint()
         backgroundPaint.color = Color.WHITE
-        this.context = context
+        this.context2 = context
     }
 }
 

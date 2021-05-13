@@ -41,11 +41,11 @@ class Cannonball : GameElement {
 
     // get Cannonball's radius
     private val radius: Int
-        private get() = (shape.right - shape.left) / 2
+        private get() = (shape!!.right - shape!!.left) / 2
 
     // test whether Cannonball collides with the given GameElement
     fun collidesWith(element: GameElement): Boolean {
-        return Rect.intersects(shape, element.shape) && velocityX > 0
+        return Rect.intersects(shape!!, element.shape!!) && velocityX > 0
     }
 
     // reverses the Cannonball's horizontal velocity
@@ -58,10 +58,10 @@ class Cannonball : GameElement {
         super.update(interval) // updates Cannonball's vertical position
 
         // update horizontal position
-        shape.offset((velocityX * interval).toInt(), 0)
+        shape!!.offset((velocityX * interval).toInt(), 0)
 
         // if Cannonball goes off the screen
-        if (shape.top < 0 || shape.left < 0 || shape.bottom > view!!.screenHeight || shape.right > view!!.screenWidth) isOnScreen =
+        if (shape!!.top < 0 || shape!!.left < 0 || shape!!.bottom > view!!.screenHeight || shape!!.right > view!!.screenWidth) isOnScreen =
             false // set it to be removed
     }
 
@@ -71,8 +71,8 @@ class Cannonball : GameElement {
 //         shape.top + getRadius(), getRadius(), paint);
         //Rect shSrc = new Rect(0, 0, 20, 20);
         val shDst = Rect(
-            shape.left, shape.top, shape.left + radius * 7,
-            shape.top + radius * 3
+            shape!!.left, shape!!.top, shape!!.left + radius * 7,
+            shape!!.top + radius * 3
         )
         canvas.drawBitmap(bitmap!!, null, shDst, null)
     }

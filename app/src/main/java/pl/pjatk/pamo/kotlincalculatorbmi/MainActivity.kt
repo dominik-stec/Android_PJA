@@ -42,7 +42,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        startLogoWelcome()
+
         setContentView(R.layout.activity_main)
+
+        calcHeight = false
+        calcWeight = false
+
+        getAllLayoutIds()
+        initIntents()
+        setBtnListener()
+
+        setGameListener()
+
+        setStatDataListener()
+        setStatBtnListener()
+        statBtn!!.isEnabled = false
+
+        setRadioButtonListener()
+
     }
 
     override fun onResume() {

@@ -6,14 +6,14 @@ import android.graphics.Rect
 
 
 open class BitmapElement {
-    var bitmap: Bitmap? = null
-    var view // the view that contains this GameElement
+    open var bitmap: Bitmap? = null
+    open var view // the view that contains this GameElement
             : CannonView? = null
-    var velocityY // the vertical velocity of this GameElement
+    open var velocityY // the vertical velocity of this GameElement
             = 0f
-    var soundId // the sound associated with this GameElement
+    open var soundId // the sound associated with this GameElement
             = 0
-    var shape // the GameElement's rectangular bounds
+    open var shape // the GameElement's rectangular bounds
             : Rect? = null
 
     constructor() {}
