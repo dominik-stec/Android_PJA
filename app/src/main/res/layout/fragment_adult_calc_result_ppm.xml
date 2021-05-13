@@ -6,7 +6,7 @@
     android:background="#868BC34A"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="pl.pjatk.pamo.calculatorbmi.FragmentCalcPPM">
+    tools:context="pl.pjatk.pamo.kotlincalculatorbmi.FragmentCalcPPM">
 
     <EditText
         android:id="@+id/ageTextView"

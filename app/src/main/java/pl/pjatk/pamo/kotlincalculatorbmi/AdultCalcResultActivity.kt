@@ -28,7 +28,7 @@ class AdultCalcResultActivity : AppCompatActivity() {
     }
 
     private val bundleBmiVal: Unit
-        private get() {
+         get() {
             val b = intent.extras
             bmi = b!!.getFloat(BMI_RESULT, -1f)
             height = b.getFloat("height", -1f)

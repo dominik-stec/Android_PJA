@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/fragment"
-    android:name="pl.pjatk.pamo.calculatorbmi.game.MainActivityFragment"
+    android:name="pl.pjatk.pamo.kotlincalculatorbmi.game.MainActivityFragment"
     tools:layout="@layout/fragment_main">
 
 </fragment>

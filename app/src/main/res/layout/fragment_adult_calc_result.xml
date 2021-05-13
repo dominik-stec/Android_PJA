@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="#D8D8D8"
     android:orientation="vertical"
-    tools:context="pl.pjatk.pamo.calculatorbmi.FragmentPPM">
+    tools:context="pl.pjatk.pamo.kotlincalculatorbmi.FragmentPPM">
 
     <TextView
         android:id="@+id/food_logo"

@@ -116,7 +116,7 @@
 
     <fragment
         android:id="@+id/fragment_PPM"
-        android:name="pl.pjatk.pamo.calculatorbmi.FragmentPPM"
+        android:name="pl.pjatk.pamo.kotlincalculatorbmi.FragmentPPM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -128,7 +128,7 @@
 
     <fragment
         android:id="@+id/fragment_calc_PPM"
-        android:name="pl.pjatk.pamo.calculatorbmi.FragmentCalcPPM"
+        android:name="pl.pjatk.pamo.kotlincalculatorbmi.FragmentCalcPPM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

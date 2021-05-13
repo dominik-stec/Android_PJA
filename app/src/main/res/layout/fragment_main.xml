@@ -2,10 +2,10 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context="pl.pjatk.pamo.calculatorbmi.game.MainActivityFragment">
+             tools:context="pl.pjatk.pamo.kotlincalculatorbmi.game.MainActivityFragment">
 
 
-   <pl.pjatk.pamo.calculatorbmi.game.CannonView
+   <pl.pjatk.pamo.kotlincalculatorbmi.game.CannonView
        android:id="@+id/cannonView"
        android:layout_width="match_parent"
        android:layout_height="match_parent" />
