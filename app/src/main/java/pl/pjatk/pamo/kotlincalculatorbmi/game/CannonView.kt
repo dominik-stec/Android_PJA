@@ -78,7 +78,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         screenHeight = h // store CannonView's height
 
         // configure text properties
-        textPaint.setTextSize((TEXT_SIZE_PERCENT * screenHeight) as Int.toFloat())
+        textPaint.setTextSize((TEXT_SIZE_PERCENT * screenHeight).toFloat())
         textPaint.isAntiAlias = true // smoothes the text
     }
 
@@ -98,7 +98,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         )
         val random = Random() // for determining random velocities
         targets =
-            ArrayList<pl.pjatk.pamo.calculatorbmi.game.Target>() // construct a new Target list
+            ArrayList<Target>() // construct a new Target list
 
         // initialize targetX for the first Target from the left
         var targetX = (TARGET_FIRST_X_PERCENT * screenWidth).toInt()
@@ -134,7 +134,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
                     this, color, HIT_REWARD, targetX, targetY,
                     (TARGET_WIDTH_PERCENT * screenWidth).toInt(),
                     (TARGET_LENGTH_PERCENT * screenHeight).toInt(),
-                    velocity.toInt()
+                    velocity.toFloat()
                 )
             )
 
@@ -170,7 +170,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         val interval = elapsedTimeMS / 1000.0 // convert to seconds
 
         // update cannonball's position if it is on the screen
-        if (cannon.getCannonball() != null) cannon.getCannonball().update(interval)
+        if (cannon!!.cannonball != null) cannon!!.cannonball!!.update(interval)
         blocker!!.update(interval) // update the blocker's position
         for (target in targets!!) target.update(interval) // update the target's position
         timeLeft -= interval // subtract from time left
@@ -212,8 +212,8 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         cannon!!.align(angle)
 
         // fire Cannonball if there is not already a Cannonball on screen
-        if (cannon.getCannonball() == null ||
-            !cannon.getCannonball().isOnScreen()
+        if (cannon?.cannonball == null ||
+            !cannon!!.cannonball!!.isOnScreen
         ) {
             cannon!!.fireCannonball()
             ++shotsFired
@@ -276,9 +276,9 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         cannon!!.draw(canvas) // draw the cannon
 
         // draw the GameElements
-        if (cannon.getCannonball() != null &&
-            cannon.getCannonball().isOnScreen()
-        ) cannon.getCannonball().draw(canvas)
+        if (cannon?.cannonball != null &&
+            cannon?.cannonball!!.isOnScreen
+        ) cannon?.cannonball!!.draw(canvas)
         blocker!!.draw(canvas) // draw the blocker
 
         // draw all of the Targets
@@ -290,16 +290,16 @@ class CannonView(context: Context, attrs: AttributeSet?) :
     fun testForCollisions() {
         // remove any of the targets that the Cannonball
         // collides with
-        if (cannon.getCannonball() != null &&
-            cannon.getCannonball().isOnScreen()
+        if (cannon?.cannonball != null &&
+            cannon?.cannonball!!.isOnScreen
         ) {
             var n = 0
             while (n < targets!!.size) {
-                if (cannon.getCannonball().collidesWith(targets!![n])) {
+                if (cannon?.cannonball!!.collidesWith(targets!![n])) {
                     targets!![n].playSound() // play Target hit sound
 
                     // add hit rewards time to remaining time
-                    timeLeft += targets!![n].getHitReward()
+                    timeLeft += targets!![n].hitReward
                     cannon!!.removeCannonball() // remove Cannonball from game
                     targets!!.removeAt(n) // remove the Target that was hit
                     --n // ensures that we don't skip testing new target n
@@ -312,13 +312,13 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         }
 
         // check if ball collides with blocker
-        if (cannon.getCannonball() != null &&
-            cannon.getCannonball().collidesWith(blocker)
+        if (cannon?.cannonball != null &&
+            cannon?.cannonball!!.collidesWith(blocker!!)
         ) {
             blocker!!.playSound() // play Blocker hit sound
 
             // reverse ball direction
-            cannon.getCannonball().reverseVelocityX()
+            cannon!!.cannonball!!.reverseVelocityX()
 
             // deduct blocker's miss penalty from remaining time
             timeLeft -= blocker!!.missPenalty.toDouble()
@@ -508,15 +508,15 @@ class CannonView(context: Context, attrs: AttributeSet?) :
         soundMap = SparseIntArray(3) // create new SparseIntArray
         soundMap.put(
             TARGET_SOUND_ID,
-            soundPool.load(context, R.raw.target_hit, 1)
+            soundPool!!.load(context, R.raw.target_hit, 1)
         )
         soundMap.put(
             CANNON_SOUND_ID,
-            soundPool.load(context, R.raw.cannon_fire, 1)
+            soundPool!!.load(context, R.raw.cannon_fire, 1)
         )
         soundMap.put(
             BLOCKER_SOUND_ID,
-            soundPool.load(context, R.raw.blocker_hit, 1)
+            soundPool!!.load(context, R.raw.blocker_hit, 1)
         )
         textPaint = Paint()
         backgroundPaint = Paint()

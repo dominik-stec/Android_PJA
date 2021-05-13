@@ -8,12 +8,12 @@ import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 open class GameElement(// the view that contains this GameElement
-    protected override var view: CannonView?, color: Int, soundId: Int, x: Int,
+     override var view: CannonView?, color: Int, soundId: Int, x: Int,
     y: Int, width: Int, length: Int, velocityY: Float
 ) :
     BitmapElement() {
     protected var paint = Paint() // Paint to draw this GameElement
-    override var shape // the GameElement's rectangular bounds
+    override lateinit var shape // the GameElement's rectangular bounds
             : Rect
     private override var velocityY // the vertical velocity of this GameElement
             : Float
@@ -28,7 +28,7 @@ open class GameElement(// the view that contains this GameElement
 
         // if this GameElement collides with the wall, reverse direction
         if (shape.top < 0 && velocityY < 0 ||
-            shape.bottom > view.screenHeight && velocityY > 0
+            shape.bottom > view!!.screenHeight && velocityY > 0
         ) velocityY *= -1f // reverse this GameElement's velocity
     }
 
@@ -42,7 +42,7 @@ open class GameElement(// the view that contains this GameElement
 
     // plays the sound that corresponds to this type of GameElement
     fun playSound() {
-        view.playSound(soundId)
+        view!!.playSound(soundId)
     }
 
     // public constructor
@@ -53,7 +53,7 @@ open class GameElement(// the view that contains this GameElement
         this.velocityY = velocityY
 
         //https://openclipart.org/image/800px/205971
-        bitmap = BitmapFactory.decodeResource(view.resources, R.drawable.virus)
+        bitmap = BitmapFactory.decodeResource(view!!.resources, R.drawable.virus)
     }
 }
 
