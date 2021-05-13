@@ -72,11 +72,11 @@ class ChildCalcResultActivity : AppCompatActivity() {
             } else {
                 childAgeString = childAge!!.text.toString()
                 intent!!.putExtra(
-                    pl.pjatk.pamo.calculatorbmi.GirlPercentActivity.BMI_RESULT,
+                    GirlPercentActivity.BMI_RESULT,
                     bmiRound
                 )
                 intent.putExtra(
-                    pl.pjatk.pamo.calculatorbmi.GirlPercentActivity.CHILD_AGE,
+                    GirlPercentActivity.CHILD_AGE,
                     childAgeString
                 )
                 startActivity(intent)
