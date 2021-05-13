@@ -21,7 +21,9 @@ class FragmentPPM : Fragment() {
         val view = inflater.inflate(R.layout.fragment_adult_calc_result, container, false)
         val food = view.findViewById<View>(R.id.food_image) as ImageView
         val activity = activity as AdultCalcResultActivity?
-        bmi = activity.getBmi()
+        if (activity != null) {
+            bmi = activity.bmi
+        }
         if (bmi <= 18.5) food.setImageResource(R.drawable.pizza) else if (bmi > 18.5 && bmi <= 24.9) food.setImageResource(
             R.drawable.pizza
         ) else if (bmi > 24.9 && bmi <= 29.9) food.setImageResource(R.drawable.dinner) else if (bmi > 29.9 && bmi <= 34.9) food.setImageResource(
