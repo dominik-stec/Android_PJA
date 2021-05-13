@@ -4,12 +4,12 @@ package pl.pjatk.pamo.kotlincalculatorbmi.game
 
 
 import android.graphics.*
-import pl.pjatk.pamo.calculatorbmi.R
+import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 class Cannon(// view containing the Cannon
     private val view: CannonView, // Cannon base's radius
-    private val baseRadius: Int, barrelLength: Int,
+    private var baseRadius: Int, barrelLength: Int,
     barrelWidth: Int
 ) {
     private val barrelLength // Cannon barrel's length
@@ -62,7 +62,7 @@ class Cannon(// view containing the Cannon
 //         CannonView.CANNON_SOUND_ID, -radius,
 //         view.getScreenHeight() / 2 - radius, radius, velocityX,
 //         velocityY);
-        cannonball.playSound() // play fire Cannonball sound
+        cannonball!!.playSound() // play fire Cannonball sound
     }
 
     // draws the Cannon on the Canvas
@@ -76,7 +76,7 @@ class Cannon(// view containing the Cannon
         // draw cannon base
         canvas.drawCircle(
             0f, (view.screenHeight / 2).toFloat(),
-            baseRadius as Int.toFloat(), paint
+            baseRadius.toFloat(), paint
         )
     }
 
