@@ -13,7 +13,7 @@ class Cannonball : GameElement {
     // returns true if this Cannonball is on the screen
     var isOnScreen: Boolean
         private set
-    override var bitmap: Bitmap?
+    override var bitmap: Bitmap? = null
 
     // constructor
     constructor(
@@ -61,7 +61,7 @@ class Cannonball : GameElement {
         shape.offset((velocityX * interval).toInt(), 0)
 
         // if Cannonball goes off the screen
-        if (shape.top < 0 || shape.left < 0 || shape.bottom > view.screenHeight || shape.right > view.screenWidth) isOnScreen =
+        if (shape.top < 0 || shape.left < 0 || shape.bottom > view!!.screenHeight || shape.right > view!!.screenWidth) isOnScreen =
             false // set it to be removed
     }
 
