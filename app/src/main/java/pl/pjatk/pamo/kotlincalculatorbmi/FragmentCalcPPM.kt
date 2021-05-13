@@ -17,6 +17,7 @@ class FragmentCalcPPM : Fragment() {
     var ageView: TextView? = null
     var textView: TextView? = null
     var view: View? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -26,18 +27,18 @@ class FragmentCalcPPM : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         view = inflater.inflate(R.layout.fragment_adult_calc_result_ppm, container, false)
-        val button = view.findViewById<View>(R.id.commitAge) as Button
+        val button = view!!.findViewById<View>(R.id.commitAge) as Button
         button.setOnClickListener {
             val activity = activity as AdultCalcResultActivity?
-            val height: Float = activity.getHeight()
-            val weight: Float = activity.getWeight()
-            ageView = view.findViewById<View>(R.id.ageTextView) as TextView
+            val height: Float = activity!!.height
+            val weight: Float = activity!!.weight
+            ageView = view!!.findViewById<View>(R.id.ageTextView) as TextView
             val age = ageView!!.text.toString().toInt()
-            radioGroup = view.findViewById<View>(R.id.radioGroup) as RadioGroup
+            radioGroup = view!!.findViewById<View>(R.id.radioGroup) as RadioGroup
             val id = radioGroup!!.checkedRadioButtonId
-            radioButton = view.findViewById(id)
-            val gender = radioButton.getText().toString()
-            textView = view.findViewById<View>(R.id.calories) as TextView
+            radioButton = view!!.findViewById(id)
+            val gender = radioButton!!.getText().toString()
+            textView = view!!.findViewById<View>(R.id.calories) as TextView
             val ppm = calcPPM(height, weight, age, gender)
             textView!!.text = ppm.toString()
         }
