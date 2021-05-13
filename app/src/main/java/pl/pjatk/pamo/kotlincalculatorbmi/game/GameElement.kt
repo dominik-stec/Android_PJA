@@ -8,7 +8,7 @@ import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 open class GameElement(// the view that contains this GameElement
-    protected override var view: CannonView, color: Int, soundId: Int, x: Int,
+    protected override var view: CannonView?, color: Int, soundId: Int, x: Int,
     y: Int, width: Int, length: Int, velocityY: Float
 ) :
     BitmapElement() {
