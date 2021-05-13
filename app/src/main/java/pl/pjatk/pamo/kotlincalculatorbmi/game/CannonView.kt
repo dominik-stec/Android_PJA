@@ -23,7 +23,7 @@ import android.util.SparseIntArray
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import pl.pjatk.pamo.calculatorbmi.R
+import pl.pjatk.pamo.kotlincalculatorbmi.R
 import java.util.*
 
 
@@ -38,7 +38,7 @@ class CannonView(context: Context, attrs: AttributeSet?) :
     // game objects
     private var cannon: Cannon? = null
     private var blocker: Blocker? = null
-    private var targets: ArrayList<pl.pjatk.pamo.calculatorbmi.game.Target>? = null
+    private var targets: ArrayList<Target>? = null
 
     // get width of the game screen
     // dimension variables

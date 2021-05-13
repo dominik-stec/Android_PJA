@@ -4,7 +4,7 @@ package pl.pjatk.pamo.kotlincalculatorbmi.game
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import pl.pjatk.pamo.calculatorbmi.R
+import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 class GameMainActivity : AppCompatActivity() {

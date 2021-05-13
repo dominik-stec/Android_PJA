@@ -4,7 +4,7 @@ package pl.pjatk.pamo.kotlincalculatorbmi.game
 
 
 import android.graphics.*
-import pl.pjatk.pamo.calculatorbmi.R
+import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 open class GameElement(// the view that contains this GameElement
