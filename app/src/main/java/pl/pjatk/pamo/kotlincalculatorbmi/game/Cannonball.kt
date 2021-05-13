@@ -13,11 +13,11 @@ class Cannonball : GameElement {
     // returns true if this Cannonball is on the screen
     var isOnScreen: Boolean
         private set
-    override var bitmap: Bitmap? = null
+    override var bitmap: Bitmap?
 
     // constructor
     constructor(
-        view: CannonView?, color: Int, soundId: Int, x: Int,
+        view: CannonView, color: Int, soundId: Int, x: Int,
         y: Int, radius: Int, velocityX: Float, velocityY: Float
     ) : super(
         view, color, soundId, x, y,
@@ -28,7 +28,7 @@ class Cannonball : GameElement {
     }
 
     constructor(
-        view: CannonView?, bitmap: Bitmap?, color: Int, soundId: Int, x: Int,
+        view: CannonView, bitmap: Bitmap?, color: Int, soundId: Int, x: Int,
         y: Int, radius: Int, velocityX: Float, velocityY: Float
     ) : super(
         view, color, soundId, x, y,
@@ -74,7 +74,7 @@ class Cannonball : GameElement {
             shape.left, shape.top, shape.left + radius * 7,
             shape.top + radius * 3
         )
-        canvas.drawBitmap(bitmap, null, shDst, null)
+        canvas.drawBitmap(bitmap!!, null, shDst, null)
     }
 }
 
