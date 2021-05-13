@@ -71,12 +71,12 @@ class GirlPercentActivity : AppCompatActivity() {
     private fun putLayoutIntentData() {
         val percent = percentVal!!.text.toString()
         percentScaleActIntent!!.putExtra(
-            pl.pjatk.pamo.calculatorbmi.PercentScaleActivity.BMI,
+            PercentScaleActivity.BMI,
             bmi!!
         )
-        percentScaleActIntent!!.putExtra(pl.pjatk.pamo.calculatorbmi.PercentScaleActivity.AGE, age)
+        percentScaleActIntent!!.putExtra(PercentScaleActivity.AGE, age)
         percentScaleActIntent!!.putExtra(
-            pl.pjatk.pamo.calculatorbmi.PercentScaleActivity.PERCENT,
+            PercentScaleActivity.PERCENT,
             percent
         )
         startActivity(percentScaleActIntent)
