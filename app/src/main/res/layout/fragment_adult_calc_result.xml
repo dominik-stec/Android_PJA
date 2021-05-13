@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#D8D8D8"
+    android:orientation="vertical"
+    tools:context="pl.pjatk.pamo.calculatorbmi.FragmentPPM">
+
+    <TextView
+        android:id="@+id/food_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recommended_food" />
+
+    <ImageView
+        android:id="@+id/food_image"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/openofficeorg_calc"
+        android:scaleType="fitXY"/>
+
+</LinearLayout>
