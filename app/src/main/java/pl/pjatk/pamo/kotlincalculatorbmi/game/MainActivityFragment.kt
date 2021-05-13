@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import pl.pjatk.pamo.calculatorbmi.R
+import pl.pjatk.pamo.kotlincalculatorbmi.R
 
 
 class MainActivityFragment : Fragment() {
