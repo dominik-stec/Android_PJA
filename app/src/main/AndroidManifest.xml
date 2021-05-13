@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pl.pjatk.pamo.kotlincalculatorbmi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission." />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinCalculatorBMI">
-        <activity android:name=".MainActivity">
+        <activity android:name=".StartLogoActivity" />
+        <activity android:name=".PercentScaleActivity" />
+        <activity android:name=".BoyPercentActivity" />
+        <activity android:name=".GirlPercentActivity" />
+        <activity android:name=".ChildCalcResultActivity" />
+        <activity android:name=".AdultCalcResultActivity" />
+        <activity android:name=".game.GameMainActivity" />
+        <activity android:name=".ShowStatActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
