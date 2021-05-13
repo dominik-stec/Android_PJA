@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import pl.pjatk.pamo.kotlincalculatorbmi.game.GameMainActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -150,10 +151,12 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intentLogo, 1)
         }
 
+        @JvmName("getHeight1")
         fun getHeight(): Float {
             return height
         }
 
+        @JvmName("getWeight1")
         fun getWeight(): Float {
             return weight
         }
