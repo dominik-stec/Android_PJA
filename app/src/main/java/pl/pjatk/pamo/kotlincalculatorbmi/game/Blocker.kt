@@ -12,7 +12,7 @@ class Blocker     // constructor
     GameElement(
         view,
         color,
-        pl.pjatk.pamo.calculatorbmi.game.CannonView.BLOCKER_SOUND_ID,
+        CannonView.BLOCKER_SOUND_ID,
         x,
         y,
         width * 5,
