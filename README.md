@@ -75,7 +75,7 @@
 
 ## Project description
 
-In this project I created BMI nad PPM calculator with health suggestions, Covid-19 game, and healt status live chart simulation in JS. I used Kotlin language.
+In this project I created BMI nad PPM calculator with health suggestions, Covid-19 game, and health status live chart simulation in JS. I used Kotlin language.
 
 ### Libraries and frameworks
 
@@ -206,7 +206,7 @@ Project URL:
 [issues-shield]: https://img.shields.io/github/issues/dominik-stec/Android_PJA.svg?style=for-the-badge
 [issues-url]: https://github.com/dominik-stec/Android_PJA/issues
 [license-shield]: https://img.shields.io/badge/License-NONE-orange
-[license-url]: https://github.com/dominik-stec/Android_PJA/blob/master/LICENSE.md
+[license-url]: https://github.com/dominik-stec/Android_PJA/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/dominik-stec
 [product-screenshot]: images/screenshot.png
